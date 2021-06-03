@@ -4,9 +4,33 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <link rel="stylesheet" href="css/style.css">
+   <script defer src="js/converter.js"></script>
+   <script defer src="js/variables_name.js"></script>
+   <script defer src="js/variables_number.js"></script>
+   <title>Homework #1</title>
 </head>
 <body>
-   
+   <div class="container content__color">
+      <h1>Homework #1</h1>
+      <div>
+         <details>
+            <summary class="drop-down">
+               Ответ на первый дополнительный вопрос
+            </summary>
+            <div class="drop-down__text">
+               JS-выражение 1000 + "108" будет равняться 1000108, т.е. будут просто склеены два значения подряд. Это происходит из-за того, что знак "+" имеет в языке JavaScript не только арифметическое применение, но так же и склеивает значения, если среди них имеется не числовое значение, либо если не произведено преобразование значения до числового при задании переменной с помощью функции prompt.
+            </div>
+         </details>
+         <details>
+            <summary class="drop-down">
+               Ответ на второй дополнительный вопрос
+            </summary>
+            <div class="drop-down__text">
+               Атрибуты тега script (async, defer).<br>Оба данных атрибута позволяют браузеру обрабатывать параллельно содержимое страницы и скрипты, что решает проблему неотображения контента страницы до обработки скриптов, если таковые расположены в "голове" сайта. Отличия атрибутов состоят в том, что все скрипты с атрибутом defer будут воспроизводиться последовательно, как и располагаются в документе, даже если скрипт, расположенный по документу ниже, обработается раньше. Атрибут async применяется для сторонних, не зависящих от наших, скриптов и такие скрипты будут воспроизводиться в порядке скорости загрузки, то есть не завися от расположения в структуре документа. К скриптам с таким атрибутом можно отнести блоки рекламы.
+            </div>
+         </details>
+      </div>
+   </div>
 </body>
 </html>

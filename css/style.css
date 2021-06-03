@@ -1,0 +1,42 @@
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+}
+
+body {
+   background: rgba(100, 100, 100, 0.05);
+}
+
+.container {
+   width: 1140px;
+   margin: 0 auto;
+}
+
+.content__color {
+   height: 100vh;
+   background: rgba(100, 100, 100, 0.1);
+}
+
+h1 {
+   font-size: 48px;
+   color: rgb(50, 80, 110);
+   padding: 25px;
+   display: flex;
+   justify-content: center;
+}
+
+summary {
+   font-size: 30px;
+   color: rgb(50, 80, 110);
+   background: rgba(100, 100, 100, 0.1);
+   padding: 20px 40px;
+   margin: 10px 10px;
+}
+
+.drop-down__text {
+   padding: 20px 40px;
+   font-size: 25px;
+   line-height: 28px;
+   color: rgb(50, 80, 110);
+}
