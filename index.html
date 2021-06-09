@@ -1,12 +1,176 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
-</head>
-<body>
-   
-</body>
-</html>
+   <script>
+      
+      //1
+      //Дан код. Почему код даёт именно такие результаты?
+
+      // var a = 1, b = 1, c, d;
+      // c = ++a; console.log(c);           // 2   префиксная форма инкремента. Сначала идет увеличение значения a=1 на 1, потом вывод полученного значения
+      // d = b++; console.log(d);           // 1   постфиксная форма инкремента. Сначала идет вывод значения, затем увеличение его на 1
+      // c = (2+ ++a); console.log(c);      // 5   значение a после 4й строки стало равно 2, префиксная форма инкремента увеличивает еще на 1, далее просто сложение 2 + 3 = 5
+      // d = (2+ b++); console.log(d);      // 4   после вывода результата d в 5й строке, переменная b была увеличена на 1 и стала равна 2, в выражении стоит постфиксная форма инкремента, поэтому сначала выводим результат 2 + 2 = 4
+      // console.log(a);                    // 3   изначальное значение a = 1 было дважды за все операции увеличено на 1 (в 4й и 6й строках)
+      // console.log(b);                    // 3   изначальное значение b = 1 было дважды за все операции увеличено на 1 (в 5й и 7й строках)
+
+      // console.log("\n");
+
+
+      // //2
+      // //Чему будет равен x в примере ниже?
+
+      // var a = 2;
+      // var x = 1 + (a *= 2);   //   развернем выражение, получим x = 1 + (a = a * 2) = 1 + 4 = 5
+
+
+      //3
+      //Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. 
+
+      var a = 17, b = 4;
+      //var a = +prompt('Введите значение a'), b = +prompt('Введите значение b');
+
+      //Затем написать скрипт, который работает по следующему принципу:
+      
+      if(a >= 0 && b >= 0) {
+         console.log(`Разность чисел равняется ${a - b}`); //если a и b положительные, вывести их разность;
+      }else if(a < 0 && b < 0) {
+         console.log(`Произведение чисел равняется ${a * b}`); //если а и b отрицательные, вывести их произведение;
+      }else if(a >= 0 && b < 0 || a < 0 && b >= 0) {
+         console.log(`Сумма чисел равняется ${a + b}`); //если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.
+      }
+
+      console.log("\n");
+
+      //4
+      //Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15. Дополнительное задание. Сделайте решение вторым способом, используя рекурсию.
+
+      var i = +(Math.random() * 15).toFixed(0);
+      // var i = +prompt('Введите A в промежутке 0-15');
+      
+      // if(i < 15) {
+         switch(i) {
+            case 0: console.log(0);
+            case 1: console.log(1);
+            case 2: console.log(2);
+            case 3: console.log(3);
+            case 4: console.log(4);
+            case 5: console.log(5);
+            case 6: console.log(6);
+            case 7: console.log(7);
+            case 8: console.log(8);
+            case 9: console.log(9);
+            case 10: console.log(10);
+            case 11: console.log(11);
+            case 12: console.log(12);
+            case 13: console.log(13);
+            case 14: console.log(14);
+            case 15: console.log(15);
+         }
+      // }else{
+      //    alert('Введено некорректное значение');
+      // }
+
+      console.log("\n");
+
+      function recur(i) {
+         if (i == 15) {
+            console.log(i);
+            return 0;
+         }
+         console.log(i++);
+         recur(i);
+      }
+
+      recur(i);
+
+      console.log("\n");
+
+
+      //5
+      //Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.
+
+      var result;
+      function summ(x, y) {
+         result = x + y;
+         return result;
+      }
+
+      function diff(x, y) {
+         result = x - y;
+         return result;
+      }
+
+      function mult(x, y) {
+         result = x * y;
+         return result;
+      }
+
+      function div(x, y) {
+         if(y != 0) {
+            result = x / y;
+            return result;
+         } else {
+            return 0;
+         }
+      }
+
+
+      //6
+      //Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 5) и вернуть полученное значение (использовать switch).
+
+      var arg1 = +prompt('Задайте значение первой переменной'), 
+      arg2 = +prompt('Задайте значение второй переменной'), 
+      operation = prompt('Укажите требуемую операцию (+, -, *, /)');
+      function mathOperation(arg1, arg2, operation) {
+         switch(operation) {
+            case '+':
+               console.log(summ(arg1, arg2));
+               break;
+            case '-':
+               console.log(diff(arg1, arg2));
+               break;
+            case '*':
+               console.log(mult(arg1, arg2));
+               break;
+            case '/':
+               console.log(div(arg1, arg2));
+               break;
+         }
+      }
+
+      mathOperation(arg1, arg2, operation);
+
+      console.log("\n");
+
+      //7*
+      //Сравнить null и 0. Попробуйте объяснить результат.
+
+      console.log(null == 0); // false. в процессе сравнения, ни один из стандартных пунктов ECMA для сравнения значений переменных на равенство не может быть применен и выдается значение false по умолчанию
+      console.log(null < 0); // false. в результате преобразования к типу Number значение null становится равным +0 или 0, что не меньше нуля
+      console.log(null > 0); // false. в результате преобразования к типу Number значение null становится равным +0 или 0, что не больше нуля
+      console.log(null <= 0); // true. результат исключения результата false в сравнении null < 0. Принят для оптимизации вычислений
+      console.log(null >= 0); // true. результат исключения результата false в сравнении null > 0. Принят для оптимизации вычислений
+      console.log(null != 0); // true. null - это 'ничего', тогда как 0 является определенным значением
+
+      console.log("\n");
+
+
+      //8*
+      //С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.
+
+      function power(val, pow) {
+         if(pow == 1) {
+            return val;
+         } 
+         if(pow == 0) {
+            return 0;
+         }
+         var result = val * power(val, pow - 1);
+         console.log(result);
+         return result;
+      }
+
+      var value = +prompt('Введите значение');
+      var powerVal = +prompt('Введите степень возведения');
+
+      console.log('Результат возведения равен ' + power(value, powerVal));
+
+   </script>
