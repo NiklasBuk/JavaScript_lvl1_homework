@@ -1,12 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
-</head>
-<body>
-   
-</body>
-</html>
+<script>
+   // 1
+   // С помощью цикла while вывести все простые числа в промежутке от 0 до 100
+
+   var i = 0;
+   everPrime: while (i < 100) {
+      i++;
+      for (var j = 2; j < i; j++) {
+         if (i % j == 0) {
+            continue everPrime;
+         }
+      }
+      console.log(i);
+   }
+
+   // 2
+   // С этого урока начинаем работать с функционалом интернет-магазина. Предположим, есть сущность корзины. Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров.
+   // Товары в корзине хранятся в массиве. Задачи:
+   // a) Организовать такой массив для хранения товаров в корзине;
+
+   var basket = [
+      {
+         title: 'item1',
+         price: 1000,
+         quantity: 1
+      },
+      {
+         title: 'item2',
+         price: 150,
+         quantity: 4
+      },
+      {
+         title: 'item3',
+         price: 200,
+         quantity: 3
+      }
+   ];
+
+   // b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.
+
+   function countBasketPrice (mas) {
+      var result = 0;
+      for (var item of basket) {
+         result += item.price * item.quantity;
+      }
+      return result;
+   }
+
+   console.log(countBasketPrice(basket));
+
+
+   // 3
+   // Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. Выглядеть это должно так:
+
+   for (i = 0; i <= 9; console.log(i++));
+
+
+   // 4
+   // Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5:
+
+   var n = '*';
+
+   for (i = 0; i < 20; i++) {
+      console.log(n);
+      n += '*';
+   }
+
+</script>
