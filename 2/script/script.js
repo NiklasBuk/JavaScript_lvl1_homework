@@ -6,7 +6,7 @@ var add = '';
 
 for (var key in items) {
    var div = document.createElement('div');
-   div.classList.add('item', 'item' + key);
+   div.classList.add('item');
    add = '<img src="' + items[key].img + '">';
    add += '<p>' + items[key].title + '</p>';
    add += '<p>' + items[key].price + ' &#8381;</p>';
@@ -20,7 +20,7 @@ var sum = 0;
 var sumAdd = document.querySelector('#sum');
 
 var buttons = document.querySelectorAll('button');
-console.log(buttons);
+// console.log(buttons);
 for (var j = 0; j < items.length; j++) {
    buttons[j].id = 'b' + j;
    buttons[j].onclick = function (e) {
@@ -45,7 +45,7 @@ for (var j = 0; j < items.length; j++) {
          itemBasket += '<p>' + basket[i].price + ' &#8381;</p>';
          itemBasket += '<img src="' + basket[i].img + '">';
          itemBasket += '<p>Количество: ' + basket[i].count + '</p>';
-         div.classList.add('item', 'basket');
+         div.classList.add('item');
 
          div.innerHTML = itemBasket;
          check.append(div);
@@ -55,6 +55,7 @@ for (var j = 0; j < items.length; j++) {
          sumAdd.innerHTML = '';
          sum += basket[k].price * basket[k].count;
          sumAdd.append(document.createTextNode(`Итого: ${sum} рублей`));
+         sumAdd.classList.add('total');
       }
    }
 }
