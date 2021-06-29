@@ -25,7 +25,7 @@ for (var j = 0; j < items.length; j++) {
    buttons[j].id = 'b' + j;
    buttons[j].onclick = function (e) {
       var good = items[e.target.id[1]];
-      
+      sum = 0;
       if (basket.indexOf(good) === -1) {
          basket.push(good);
          good.count = 1;
@@ -34,6 +34,7 @@ for (var j = 0; j < items.length; j++) {
          good.count++;
       }
       console.log(basket);
+      console.log(good.count);
 
       var check = document.querySelector('#basket');
       var itemBasket = '';
